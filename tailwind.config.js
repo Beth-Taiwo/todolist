@@ -11,6 +11,8 @@ module.exports = {
       colors: {
         lightBlue: '#677acb',
         lightGrey: '#f2f5ff',
+        systemBlack: '#29325A',
+        systemGray: 'rgba(41,50,90,0.4)',
       },
     },
   },
