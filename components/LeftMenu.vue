@@ -3,11 +3,10 @@
     class="w-[263px] flex flex-col justify-between sidebar bg-lightBlue text-lightGrey"
   >
     <div class="flex flex-col">
-      <nuxt-link to="/dashboard">
-        <div class="w-full ml-9 my-14 text-4xl">
-          <h1>TodoList</h1>
-        </div>
-      </nuxt-link>
+      <div class="w-full ml-9 my-14 text-4xl">
+        <h1>TodoList</h1>
+      </div>
+
       <div id="menu" class="w-full flex flex-col text-lg pt-2">
         <nuxt-link
           v-for="menu in menuItems"
@@ -159,32 +158,12 @@ export default {
 </script>
 
 <style scoped>
-a.nuxt-link-exact-inactive {
-  background: #0629ee;
+a.nuxt-link-exact-active {
+  background: #29325a66;
 }
 .sidebar {
   overflow-x: hidden;
   white-space: nowrap;
   transition: width 1s;
-}
-
-.menuIcons {
-  font-size: 1.5rem;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.8s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-.fade-icon-enter-active,
-.fade-icon-leave-active {
-  transition-delay: opacity 0.8s;
-}
-.fade-icon-enter,
-.fade-icon-leave-to {
-  opacity: 0;
 }
 </style>
