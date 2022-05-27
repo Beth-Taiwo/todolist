@@ -7,7 +7,7 @@
         <h1 class="text-6xl">TodoList</h1>
 
         <button
-          class="btn btn-outline capitalize border-[#677acb] h-[76px] w-full"
+          class="btn btn-outline capitalize border-lightBlue h-[76px] w-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -144,18 +144,21 @@
               >
             </label>
             <label class="label inline cursor-pointer">
-              <span class="label-text text-[#677acb]">Forgot password?</span>
+              <span class="label-text text-lightBlue">Forgot password?</span>
             </label>
           </div>
         </div>
 
-        <button class="btn bg-[#677acb] capitalize h-[76px] w-full">
-          <span class="font-extrabold">Login</span>
+        <button
+          class="btn bg-lightBlue capitalize h-[76px] w-full"
+          @click="login"
+        >
+          <span class="font-extrabold text-lightGrey">Login</span>
         </button>
 
         <div class="text-center">
           <span>Not registered yet?</span>
-          <span class="text-[#677acb] ml-0.5">Create an Account</span>
+          <span class="text-lightBlue ml-0.5">Create an Account</span>
         </div>
       </div>
     </div>
@@ -165,6 +168,15 @@
 <script>
 export default {
   name: 'LoginPage',
+  methods: {
+    login() {
+      // this.$store.dispatch('login', {
+      //   email: this.email,
+      //   password: this.password,
+      // });
+      this.$router.push('/dashboard')
+    },
+  },
 }
 </script>
 
