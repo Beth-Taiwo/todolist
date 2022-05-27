@@ -1,116 +1,118 @@
 <template>
-  <div
-    class="w-[263px] flex flex-col justify-between sidebar bg-lightBlue text-lightGrey"
-  >
-    <div class="flex flex-col">
+  <div class="h-screen w-[263px] sidebar bg-lightBlue text-lightGrey">
+    <div class="flex flex-col h-full">
       <div class="w-full ml-9 my-14 text-4xl">
         <h1>TodoList</h1>
       </div>
 
-      <div id="menu" class="w-full flex flex-col text-lg pt-2">
-        <nuxt-link
-          v-for="menu in menuItems"
-          :key="menu.name"
-          class="space-x-2.5 space-y-1.5 mx-5 py-2.5 px-4 focus:outline-none flex items-center rounded-md hover:bg-[#29325A66] bg-opacity-50"
-          :to="menu.url"
-          :title="menu.name"
-        >
-          <svg
-            v-if="menu.name === 'Settings'"
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+      <div class="flex-grow flex flex-col justify-between pb-2">
+        <div id="menu" class="w-full flex flex-col pt-2">
+          <nuxt-link
+            v-for="menu in menuItems"
+            :key="menu.name"
+            class="space-x-2.5 space-y-1.5 mx-5 py-2.5 px-4 focus:outline-none flex items-center rounded-md hover:bg-[#29325A66] bg-opacity-50"
+            :to="menu.url"
+            :title="menu.name"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-            ></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-            ></path>
-          </svg>
-          <svg
-            v-else-if="menu.name === 'Calendar'"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <g
-              id="MDI_calendar-outline"
-              data-name="MDI / calendar-outline"
-              transform="translate(-4505 -1266)"
+            <svg
+              v-if="menu.name === 'Settings'"
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+            <svg
+              v-else-if="menu.name === 'Calendar'"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
             >
               <g
-                id="Boundary"
-                transform="translate(4505 1266)"
+                id="MDI_calendar-outline"
+                data-name="MDI / calendar-outline"
+                transform="translate(-4505 -1266)"
+              >
+                <g
+                  id="Boundary"
+                  transform="translate(4505 1266)"
+                  fill="#f2f5ff"
+                  stroke="rgba(0,0,0,0)"
+                  stroke-width="1"
+                  opacity="0"
+                >
+                  <rect width="24" height="24" stroke="none" />
+                  <rect x="0.5" y="0.5" width="23" height="23" fill="none" />
+                </g>
+                <path
+                  id="Path_calendar-outline"
+                  data-name="Path / calendar-outline"
+                  d="M19,4H18V2H16V4H8V2H6V4H5A2,2,0,0,0,3,6V20a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V6a2,2,0,0,0-2-2m0,16H5V10H19V20M19,8H5V6H19V8m-7,5h5v5H12Z"
+                  transform="translate(4505 1266)"
+                  fill="#f2f5ff"
+                />
+              </g>
+            </svg>
+            <svg
+              v-else
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1"
                 fill="#f2f5ff"
                 stroke="rgba(0,0,0,0)"
-                stroke-width="1"
-                opacity="0"
-              >
-                <rect width="24" height="24" stroke="none" />
-                <rect x="0.5" y="0.5" width="23" height="23" fill="none" />
-              </g>
-              <path
-                id="Path_calendar-outline"
-                data-name="Path / calendar-outline"
-                d="M19,4H18V2H16V4H8V2H6V4H5A2,2,0,0,0,3,6V20a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V6a2,2,0,0,0-2-2m0,16H5V10H19V20M19,8H5V6H19V8m-7,5h5v5H12Z"
-                transform="translate(4505 1266)"
-                fill="#f2f5ff"
-              />
-            </g>
-          </svg>
-          <svg
-            v-else
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+                :d="menu.path"
+              ></path>
+            </svg>
+            <span class="">{{ menu.name }}</span>
+          </nuxt-link>
+        </div>
+        <div>
+          <nuxt-link
+            to="/logout"
+            class="space-x-2.5 space-y-1.5 mx-5 py-2.5 px-4 focus:outline-none flex items-center"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1"
-              fill="#f2f5ff"
-              stroke="rgba(0,0,0,0)"
-              :d="menu.path"
-            ></path>
-          </svg>
-          <span class="">{{ menu.name }}</span>
-        </nuxt-link>
-      </div>
-      <nuxt-link
-        to="/logout"
-        class="fixed bottom-14 space-x-2.5 space-y-1.5 mx-5 py-2.5 px-4 focus:outline-none flex items-center"
-      >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
-            fill="#f2f5ff"
-            stroke="rgba(0,0,0,0)"
-            d="M9.92,15.59,7.33,13H17V11H7.33L9.92,8.41,8.5,7l-5,5,5,5,1.42-1.41M5,3A2,2,0,0,0,3,5V9.67l2-2V5H19V19H5V16.33l-2-2V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5a1.993,1.993,0,0,0-2-2Z"
-          ></path>
-        </svg>
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1"
+                fill="#f2f5ff"
+                stroke="rgba(0,0,0,0)"
+                d="M9.92,15.59,7.33,13H17V11H7.33L9.92,8.41,8.5,7l-5,5,5,5,1.42-1.41M5,3A2,2,0,0,0,3,5V9.67l2-2V5H19V19H5V16.33l-2-2V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5a1.993,1.993,0,0,0-2-2Z"
+              ></path>
+            </svg>
 
-        <span>Log out</span>
-      </nuxt-link>
+            <span>Log out</span>
+          </nuxt-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
