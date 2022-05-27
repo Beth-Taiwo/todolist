@@ -1,3 +1,13 @@
+@import url('http://fonts.cdnfonts.com/css/caligature-hunters');
+@import url('http://fonts.cdnfonts.com/css/avenir');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: avenir, sans-serif;
+}
+h1 {
+  font-family: 'Caligature Hunters', sans-serif;
+}
