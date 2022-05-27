@@ -51,9 +51,11 @@
         </div>
       </div>
     </div>
+
     <div class="mt-3 pl-2 pr-4">
       <p class="font-black text-2xl">Tasks</p>
-      <div class="w-full mb-3">
+
+      <div class="w-full mt-3">
         <nav
           class="w-full whitespace-nowrap overflow-x-auto flex justify-between border-b"
         >
@@ -95,6 +97,44 @@
             <span class="ml-2"> Add task </span>
           </button>
         </nav>
+
+        <div class="flex justify-between py-4">
+          <div class="relative w-2/5">
+            <svg
+              class="w-4 h-4 absolute top-0 left-4 transform translate-y-4 text-systemGray"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+            <input
+              type="search"
+              name="search"
+              id=""
+              class="input w-full rounded-[10px] bg-lightGrey pl-12"
+              placeholder="Search anything"
+            />
+          </div>
+          <div class="flex text-sm space-x-3">
+            <div class="border p-2">
+              <select name="" id="" class="px-1">
+                <option value="">Filter by</option>
+              </select>
+            </div>
+            <div class="border p-2">
+              <select name="" id="" class="px-1">
+                <option value="">Sort by</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
         <Component :is="currentComponent" />
       </div>
