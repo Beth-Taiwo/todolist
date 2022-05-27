@@ -8,9 +8,8 @@
 </template>
 
 <script>
-// import LeftMenu from '../components/LeftMenu.vue'
 export default {
-  //   components: { LeftMenu },
+  name: 'MainLayout',
 }
 </script>
 
