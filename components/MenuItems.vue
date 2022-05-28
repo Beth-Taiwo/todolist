@@ -19,15 +19,23 @@
       tabindex="0"
       class="dropdown-content menu py-0.5 px-1 shadow bg-gray-100 w-32 text-xs"
     >
-      <button class="hover:bg-gray-300">Edit</button>
+      <label :for="modalId" class="hover:bg-gray-300">Edit</label>
       <button class="hover:bg-gray-300">Delete</button>
     </ul>
+    <Modal :modalId="modalId" :title="title" :btnText="btnText" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'DropdownMenu',
+  data() {
+    return {
+      modalId: 'Edit task',
+      title: 'Edit task',
+      btnText: 'Edit task',
+    }
+  },
 }
 </script>
 
