@@ -74,8 +74,10 @@
               {{ nav.description }}
             </li>
           </ul>
-          <button
-            class="bg-lightBlue text-white px-6 py-1.5 mb-2.5 rounded-[10px] flex items-center justify-center"
+
+          <label
+            for="my-modal"
+            class="cursor-pointer bg-lightBlue text-white px-6 py-1.5 mb-2.5 rounded-[10px] flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +97,7 @@
               />
             </svg>
             <span class="ml-2"> Add task </span>
-          </button>
+          </label>
         </nav>
 
         <div class="flex justify-between py-4">
@@ -139,6 +141,7 @@
         <Component :is="currentComponent" />
       </div>
     </div>
+    <Modal />
   </div>
 </template>
 
