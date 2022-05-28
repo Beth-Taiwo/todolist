@@ -1,19 +1,21 @@
 <template>
-  <div class="bg-slate-500 w-full flex justify-center">
+  <div
+    class="bg-slate-500 min-h-screen w-full flex items-center justify-center"
+  >
     <div
-      class="flex justify-center items-center bg-white py-7 w-[657px] rounded-[20px]"
+      class="flex-grow-0 flex justify-center items-center bg-white py-7 w-[657px] rounded-[20px]"
     >
       <div class="w-[550px] flex flex-col items-center space-y-8">
-        <h1 class="text-6xl">TodoList</h1>
+        <h1 class="text-5xl">Todolist</h1>
 
         <button
-          class="btn btn-outline capitalize border-lightBlue h-[76px] w-full"
+          class="btn btn-outline capitalize border-lightBlue w-full py-4 h-auto"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
-            width="41px"
-            height="41px"
+            width="32px"
+            height="32px"
           >
             <path
               fill="#FFC107"
@@ -32,7 +34,7 @@
               d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
             />
           </svg>
-          <span class="ml-4"> Continue with Google </span>
+          <span class="ml-2 text-lg"> Continue with Google </span>
         </button>
         <div>
           <svg
@@ -88,50 +90,53 @@
             id="email"
             type="text"
             placeholder="mary@example.com"
-            class="input input-bordered w-full h-[76px]"
+            class="input input-bordered w-full py-4 px-5 h-auto text-lg"
           />
           <label for="password" class="label mt-3">
             <span class="label-text">Password</span>
           </label>
-          <input
-            id="password"
-            type="password"
-            placeholder="••••••••"
-            class="input input-bordered w-full h-[76px]"
-          />
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24.828"
-            height="24.828"
-            viewBox="0 0 24.828 24.828"
-          >
-            <g
-              id="Icon_feather-eye-off"
-              data-name="Icon feather-eye-off"
-              transform="translate(0.414 0.414)"
+          <div class="relative">
+            <input
+              id="password"
+              type="password"
+              placeholder="••••••••"
+              class="input input-bordered w-full py-4 pl-5 pr-16 h-auto text-lg"
+            />
+            <svg
+              class="absolute top-0 right-5 transform translate-y-5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24.828"
+              height="24.828"
+              viewBox="0 0 24.828 24.828"
             >
-              <path
-                id="Path_7"
-                data-name="Path 7"
-                d="M17.94,17.94A10.07,10.07,0,0,1,12,20C5,20,1,12,1,12A18.45,18.45,0,0,1,6.06,6.06M9.9,4.24A9.12,9.12,0,0,1,12,4c7,0,11,8,11,8a18.5,18.5,0,0,1-2.16,3.19m-6.72-1.07A3,3,0,1,1,9.88,9.88"
-                fill="none"
-                stroke="#29325a"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-              <path
-                id="Path_8"
-                data-name="Path 8"
-                d="M1,1,23,23"
-                fill="none"
-                stroke="#29325a"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              />
-            </g>
-          </svg> -->
+              <g
+                id="Icon_feather-eye-off"
+                data-name="Icon feather-eye-off"
+                transform="translate(0.414 0.414)"
+              >
+                <path
+                  id="Path_7"
+                  data-name="Path 7"
+                  d="M17.94,17.94A10.07,10.07,0,0,1,12,20C5,20,1,12,1,12A18.45,18.45,0,0,1,6.06,6.06M9.9,4.24A9.12,9.12,0,0,1,12,4c7,0,11,8,11,8a18.5,18.5,0,0,1-2.16,3.19m-6.72-1.07A3,3,0,1,1,9.88,9.88"
+                  fill="none"
+                  stroke="#29325a"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  id="Path_8"
+                  data-name="Path 8"
+                  d="M1,1,23,23"
+                  fill="none"
+                  stroke="#29325a"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </g>
+            </svg>
+          </div>
           <div class="form-control flex-row justify-between">
             <label class="label cursor-pointer">
               <input
@@ -150,10 +155,10 @@
         </div>
 
         <button
-          class="btn bg-lightBlue capitalize h-[76px] w-full"
+          class="btn bg-lightBlue capitalize py-4 h-auto w-full"
           @click="login"
         >
-          <span class="font-extrabold text-lightGrey">Login</span>
+          <span class="font-extrabold text-lg text-lightGrey">Login</span>
         </button>
 
         <div class="text-center">
