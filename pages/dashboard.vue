@@ -75,41 +75,32 @@
     </div>
     <div class="mt-3">
       <p class="font-black text-2xl">Dashboard</p>
-      <div class="pt-3 flex justify-between">
-        <div>
+      <div
+        class="pt-3 flex md:flex-col lg:flex-row justify-between items-stretch"
+      >
+        <div class="w-2/5 flex flex-col items-stretch">
           <p class="py-1.5 text-xl">Overview</p>
-          <div class="border rounded-[20px] text-center flex py-10 px-8 w-fit">
+          <div
+            class="flex-grow border rounded-[20px] text-center grid grid-cols-3 py-20"
+          >
             <div class="p-5">
-              <p class="text-[#6FC9D9] text-[2.8125rem]">30</p>
-              <p>Total tasks</p>
+              <p class="text-[#6FC9D9] text-5xl font-semibold">30</p>
+              <p class="text-2xl mt-4">Total tasks</p>
             </div>
             <div class="border-x-2 py-5 px-8">
-              <p class="text-[#6FC9D9] text-[2.8125rem]">14</p>
-              <p>Completed</p>
+              <p class="text-[#6FC9D9] text-5xl font-semibold">14</p>
+              <p class="text-2xl mt-4">Completed</p>
             </div>
             <div class="p-5">
-              <p class="text-[#6FC9D9] text-[2.8125rem]">7</p>
-              <p>In Progress</p>
+              <p class="text-[#6FC9D9] text-5xl font-semibold">7</p>
+              <p class="text-2xl mt-4">In Progress</p>
             </div>
           </div>
         </div>
-        <div class="">
+        <div class="h-full w-1/2">
           <p class="py-1.5 text-xl">Balance of tasks</p>
-          <div
-            class="border rounded-[20px] text-center flex py-10 px-8 w-[641px]"
-          >
-            <div class="p-5">
-              <p class="text-[#6FC9D9] text-[2.8125rem]">30</p>
-              <p>Total tasks</p>
-            </div>
-            <div class="border-x-2 py-5 px-8">
-              <p class="text-[#6FC9D9] text-[2.8125rem]">14</p>
-              <p>Completed</p>
-            </div>
-            <div class="p-5">
-              <p class="text-[#6FC9D9] text-[2.8125rem]">7</p>
-              <p>In Progress</p>
-            </div>
+          <div class="border rounded-[20px] text-center flex p-8">
+            <DoughnutChart />
           </div>
         </div>
       </div>
@@ -213,6 +204,7 @@
 </template>
 
 <script>
+import DoughnutChart from '../components/DoughnutChart.vue'
 export default {
   name: 'DashboardPage',
   layout: 'main',
@@ -258,6 +250,7 @@ export default {
       ]
     },
   },
+  components: { DoughnutChart },
 }
 </script>
 
