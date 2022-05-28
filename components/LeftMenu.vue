@@ -2,15 +2,15 @@
   <div class="h-screen w-[263px] sidebar bg-lightBlue text-lightGrey">
     <div class="flex flex-col h-full">
       <div class="w-full ml-9 my-14 text-4xl">
-        <h1>TodoList</h1>
+        <h1>Todolist</h1>
       </div>
 
       <div class="flex-grow flex flex-col justify-between pb-2">
-        <div id="menu" class="w-full flex flex-col pt-2">
+        <div id="menu" class="w-full flex flex-col pt-2 space-y-4">
           <nuxt-link
             v-for="menu in menuItems"
             :key="menu.name"
-            class="space-x-2.5 space-y-1.5 mx-5 py-2.5 px-4 focus:outline-none flex items-center rounded-md hover:bg-[#29325A66] bg-opacity-50"
+            class="space-x-2.5 mx-5 py-2.5 px-4 focus:outline-none flex items-center rounded-md hover:bg-[#29325A66] bg-opacity-50"
             :to="menu.url"
             :title="menu.name"
           >
