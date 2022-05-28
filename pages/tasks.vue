@@ -76,7 +76,7 @@
           </ul>
 
           <label
-            for="my-modal"
+            :for="modalId"
             class="cursor-pointer bg-lightBlue text-white px-6 py-1.5 mb-2.5 rounded-[10px] flex items-center justify-center"
           >
             <svg
@@ -141,7 +141,7 @@
         <Component :is="currentComponent" />
       </div>
     </div>
-    <Modal />
+    <Modal :modalId="modalId" :title="title" :btnText="btnText" />
   </div>
 </template>
 
@@ -163,6 +163,9 @@ export default {
   data() {
     return {
       currentComponent: 'AllTasks',
+      modalId: 'Add task',
+      title: 'Add task',
+      btnText: 'Add task',
       navList: [
         {
           component: 'AllTasks',

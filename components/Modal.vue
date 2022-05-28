@@ -1,9 +1,9 @@
 <template>
   <div class="text-systemBlack">
-    <input type="checkbox" id="my-modal" class="modal-toggle" />
+    <input type="checkbox" :id="modalId" class="modal-toggle" />
     <div class="modal">
       <div class="modal-box p-0" style="max-width: 940px">
-        <h3 class="font-bold text-2xl pb-4 pt-5 px-7">Add task</h3>
+        <h3 class="font-bold text-2xl pb-4 pt-5 px-7 text-left">{{ title }}</h3>
         <div class="divider my-0"></div>
         <div class="px-7 pb-7 pt-5">
           <div class="grid grid-cols-2 grid-rows-4 gap-x-16 gap-y-2">
@@ -185,9 +185,9 @@
           </div>
           <div class="modal-action justify-center mt-16">
             <label
-              for="my-modal"
+              :for="modalId"
               class="btn bg-lightBlue w-full py-4 px-5 h-auto text-3xl normal-case tracking-wide"
-              >Add task</label
+              >{{ btnText }}</label
             >
           </div>
         </div>
@@ -197,7 +197,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'task-modal',
+  props: {
+    title: {
+      type: String,
+      default: 'Add task',
+    },
+    btnText: {
+      type: String,
+      default: 'Add task',
+    },
+    modalId: {
+      type: String,
+      default: 'task-modal',
+    },
+  },
+}
 </script>
 
 <style></style>
