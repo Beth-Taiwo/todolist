@@ -1,32 +1,44 @@
 <template>
-  <div
-    class="relative flex items-center gap-2 text-sm cursor-pointer hover:brightness-50"
-  >
-    <span
-      class="absolute z-0 inset-0 opacity-30"
-      :style="`background-color: ${event.color}`"
+  <div>
+    <label
+      :for="event.summary"
+      class="relative flex items-center gap-2 text-sm cursor-pointer hover:brightness-50"
+    >
+      <span
+        class="absolute z-0 inset-0 opacity-30"
+        :style="`background-color: ${event.color}`"
+      />
+      <span
+        class="w-2 self-stretch opacity-30 relative z-10"
+        :style="`background-color: ${event.color}`"
+      />
+      <span class="py-1 relative z-10" :style="`color: ${event.color}`">{{
+        event.summary
+      }}</span>
+    </label>
+    <SmallModal
+      :smallModalId="event.summary"
+      :eventDetails="event"
+      modalMaxWidth="22rem"
     />
-    <span
-      class="w-2 self-stretch opacity-30 relative z-10"
-      :style="`background-color: ${event.color}`"
-    />
-    <span class="py-1 relative z-10" :style="`color: ${event.color}`">{{
-      event.summary
-    }}</span>
   </div>
 </template>
 
 <script>
 import Day from '~/components/Calendar/Days.vue'
+import SmallModal from '~/components/Tasks/SmallModal.vue'
 
 export default {
   name: 'CalenderEvent',
   layout: 'main',
   components: {
     Day,
+    SmallModal,
   },
   data() {
-    return {}
+    return {
+      eventData: null,
+    }
   },
   props: {
     event: {
