@@ -1,19 +1,57 @@
 <template>
   <div class="text-systemBlack">
     <div class="flex">
-      <div class="flex-grow flex flex-col mt-16 px-9">
-        <p class="font-black text-2xl">Calendar</p>
-        <div class="flex justify-between">
-          <div><p>January 2022</p></div>
+      <div class="flex-grow flex flex-col mt-16 px-9 space-y-2.5">
+        <p class="font-black text-2xl ml-11">Calendar</p>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <svg
+              class="w-7 h-7"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <p class="text-xl">January 2022</p>
+            <svg
+              class="w-7 h-7"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
           <div>
-            <select name="" id="">
+            <select
+              name=""
+              id=""
+              v-model="selectedView"
+              class="border py-2.5 px-3 mr-1 mb-3 rounded-[5px]"
+            >
               <option value="">Month view</option>
+              <option
+                :value="viewType"
+                v-for="(viewType, x) in calendarView"
+                :key="x"
+              >
+                {{ viewType }}
+              </option>
             </select>
           </div>
           <div>
             <label
               :for="modalId"
-              class="cursor-pointer bg-lightBlue text-white px-6 py-1.5 mb-2.5 rounded-[10px] flex items-center justify-center"
+              class="cursor-pointer bg-lightBlue text-white px-6 py-2 mb-2.5 rounded-[10px] flex items-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,6 +106,7 @@
         repudiandae quae.
       </div>
     </div>
+    <Modal :modalId="modalId" btnText="Add task" title="Add task" />
   </div>
 </template>
 
@@ -75,6 +114,7 @@
 import Day from '~/components/Calendar/Days.vue'
 import Event from '../components/Calendar/others/Event.vue'
 import calenderData from '../components/Calendar/others/monthEvents.js'
+import Modal from '../components/Modal.vue'
 
 export default {
   name: 'CalendarPage',
@@ -82,18 +122,15 @@ export default {
   components: {
     Day,
     Event,
+    Modal,
   },
   data() {
     return {
       monthData: [],
       modalId: 'modal-id',
       daysOfTheWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      firstWeek: [27, 28, 29, 30, 31, 1, 2],
-      secondWeek: [3, 4, 5, 6, 7, 8, 9],
-      thirdWeek: [10, 11, 12, 13, 14, 15, 16],
-      fourthWeek: [17, 18, 19, 20, 21, 22, 23],
-      fifthWeek: [24, 25, 26, 27, 28, 29, 30],
-      sixthWeek: [31, 1, 2, 3, 4, 5, 6],
+      calendarView: ['Day view', 'Week view', 'Month view', 'Year view'],
+      selectedView: 'Month view',
     }
   },
   computed: {
