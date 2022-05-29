@@ -1,5 +1,7 @@
 <template>
-  <div class="relative flex items-center gap-2 text-sm">
+  <div
+    class="relative flex items-center gap-2 text-sm cursor-pointer hover:brightness-50"
+  >
     <span
       class="absolute z-0 inset-0 opacity-30"
       :style="`background-color: ${event.color}`"
