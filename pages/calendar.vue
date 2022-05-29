@@ -40,14 +40,14 @@
           <div class="grid grid-cols-7 row-auto">
             <div
               class="p-4 font-bold text-xl h-16 border border-gray-200"
-              v-for="day in daysOfTheWeek"
-              :key="day"
+              v-for="(day, ind) in daysOfTheWeek"
+              :key="day + ind"
             >
               {{ day }}
             </div>
             <Day
-              v-for="calData in calenderData"
-              :key="calData"
+              v-for="(calData, inde) in calenderData"
+              :key="calData + inde"
               :date="calData.date"
             >
               <template #events>
@@ -74,7 +74,7 @@
 <script>
 import Day from '~/components/Calendar/Days.vue'
 import Event from '../components/Calendar/others/Event.vue'
-import calenderData from '../components/Calendar/others/monthEvents.json'
+import calenderData from '../components/Calendar/others/monthEvents.js'
 
 export default {
   name: 'CalendarPage',
