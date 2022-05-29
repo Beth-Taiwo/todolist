@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="checkbox" :id="smallModalId" class="modal-toggle" />
-    <label :for="smallModalId" class="modal cursor-pointer bg-transparent">
+    <label :for="smallModalId" class="modal z-10 cursor-pointer bg-transparent">
       <label
         class="modal-box relative"
         :style="`max-width:${modalMaxWidth}`"
