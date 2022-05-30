@@ -167,7 +167,7 @@ export default {
   },
   computed: {
     categoryColor() {
-      return categoryColor
+      return categoryColor[0]
     },
   },
 

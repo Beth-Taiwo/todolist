@@ -99,11 +99,57 @@
           </div>
         </div>
       </div>
-      <div class="border-l-2 h-screen flex flex-col w-1/5">
-        HEllo Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-        accusantium quis dolor eos ipsum repellat minus neque quod inventore
-        explicabo ratione, aliquam magnam id fugit harum optio quisquam
-        repudiandae quae.
+      <div class="border-l-2 h-screen flex flex-col w-1/5 pl-8 pr-12 pt-12">
+        <div class="flex justify-between items-center my-2">
+          <p class="font-black text-2xl">Categories</p>
+          <svg
+            class="cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="17.138"
+            height="17.138"
+            viewBox="0 0 17.138 17.138"
+          >
+            <path
+              id="Icon_metro-pencil"
+              data-name="Icon metro-pencil"
+              d="M15.888,1.071a2.678,2.678,0,0,1,2.142,4.285L16.96,6.427,13.211,2.678l1.071-1.071a2.666,2.666,0,0,1,1.607-.536ZM2.5,13.389l-1.071,4.82,4.82-1.071L16.156,7.23,12.407,3.481,2.5,13.389ZM13.4,7.156l-7.5,7.5-.923-.923,7.5-7.5Z"
+              transform="translate(-1.428 -1.071)"
+              fill="#29325a"
+            />
+          </svg>
+        </div>
+        <div class="">
+          <div
+            v-for="(categ, index) in category"
+            :key="index"
+            class="flex items-center text-lg mt-4"
+          >
+            <p class="w-5 h-5 rounded-full" :class="[categ.color]"></p>
+            <p class="ml-4">
+              {{ categ.name }}
+            </p>
+          </div>
+          <div class="text-lightBlue text-lg mt-4 flex items-center">
+            Add category<svg
+              class="ml-3"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="img"
+              width="18"
+              height="18"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M12 20v-8m0 0V4m0 8h8m-8 0H4"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
     <Modal :modalId="modalId" btnText="Add task" title="Add task" />
@@ -136,6 +182,16 @@ export default {
   computed: {
     calenderData() {
       return calenderData
+    },
+    category() {
+      return [
+        { name: 'Family', color: 'bg-[#E58D8D33]' },
+        { name: 'Money', color: 'bg-[#67CBAC33]' },
+        { name: 'Work', color: 'bg-[#A867CB33]' },
+        { name: 'Education', color: 'bg-[#8A904833]' },
+        { name: 'Travel', color: 'bg-[#7367CB33]' },
+        { name: 'House-keeping', color: 'bg-[#CB916733]' },
+      ]
     },
   },
 }
