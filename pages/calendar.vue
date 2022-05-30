@@ -33,16 +33,16 @@
           </div>
           <div>
             <select
-              name=""
               id=""
               v-model="selectedView"
+              name=""
               class="border py-2.5 px-3 mr-1 mb-3 rounded-[5px]"
             >
               <option value="">Month view</option>
               <option
-                :value="viewType"
                 v-for="(viewType, x) in calendarView"
                 :key="x"
+                :value="viewType"
               >
                 {{ viewType }}
               </option>
@@ -77,9 +77,9 @@
         <div class="overflow-x-auto h-full">
           <div class="grid grid-cols-7 row-auto">
             <div
-              class="p-4 font-bold text-xl h-16 border border-gray-200"
               v-for="(day, ind) in daysOfTheWeek"
               :key="day + ind"
+              class="p-4 font-bold text-xl h-16 border border-gray-200"
             >
               {{ day }}
             </div>
@@ -155,10 +155,10 @@
         </div>
       </div>
     </div>
-    <Modal :modalId="modalId" btnText="Add task" title="Add task" />
+    <Modal :modal-id="modalId" btn-text="Add task" title="Add task" />
     <CategoryModal
-      categoryModalId="categId"
-      btnText="Add category"
+      category-modal-id="categId"
+      btn-text="Add category"
       title="Add category"
       @add-to-category="addCategory"
     />
@@ -166,21 +166,21 @@
 </template>
 
 <script>
-import Day from '~/components/Calendar/Days.vue'
 import Event from '../components/Calendar/others/Event.vue'
 import calenderData from '../components/Calendar/others/monthEvents.js'
 import Modal from '../components/Modal.vue'
+import Day from '~/components/Calendar/Days.vue'
 import CategoryModal from '~/components/CategoryModal.vue'
 
 export default {
   name: 'CalendarPage',
-  layout: 'main',
   components: {
     Day,
     Event,
     Modal,
     CategoryModal,
   },
+  layout: 'main',
   data() {
     return {
       monthData: [],

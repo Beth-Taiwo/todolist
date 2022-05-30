@@ -52,7 +52,7 @@ export default {
 
       const config = {
         type: 'doughnut',
-        data: data,
+        data,
         options: {
           cutout: '90%',
           maintainAspectRatio: false,

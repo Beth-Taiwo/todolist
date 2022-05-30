@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="checkbox" :id="categoryModalId" class="modal-toggle" />
+    <input :id="categoryModalId" type="checkbox" class="modal-toggle" />
     <label :for="categoryModalId" class="modal cursor-pointer">
       <label class="modal-box relative p-0" for="">
         <h3 class="font-bold text-2xl pb-4 pt-5 px-7 text-left">{{ title }}</h3>
@@ -65,13 +65,13 @@ export default {
       default: 'Add category',
     },
   },
+  emits: ['add-to-category'],
   data() {
     return {
       selectedColor: '',
       categoryName: '',
     }
   },
-  emits: ['add-to-category'],
   computed: {
     categoryColor() {
       return categoryColor[0]
