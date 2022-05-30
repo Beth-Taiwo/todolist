@@ -1,6 +1,6 @@
 <template>
   <div class="text-systemBlack">
-    <input type="checkbox" :id="modalId" class="modal-toggle" />
+    <input :id="modalId" type="checkbox" class="modal-toggle" />
     <label :for="modalId" class="modal cursor-pointer">
       <label for="" class="modal-box relative p-0" style="max-width: 940px">
         <h3 class="font-bold text-2xl pb-4 pt-5 px-7 text-left">{{ title }}</h3>
@@ -198,7 +198,7 @@
 
 <script>
 export default {
-  name: 'task-modal',
+  name: 'TaskModal',
   props: {
     title: {
       type: String,

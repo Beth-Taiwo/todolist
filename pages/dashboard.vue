@@ -19,9 +19,9 @@
           ></path>
         </svg>
         <input
+          id=""
           type="search"
           name="search"
-          id=""
           class="input w-full rounded-[10px] bg-lightGrey pl-12"
           placeholder="Search anything"
         />
@@ -207,6 +207,7 @@
 import DoughnutChart from '../components/DoughnutChart.vue'
 export default {
   name: 'DashboardPage',
+  components: { DoughnutChart },
   layout: 'main',
   computed: {
     tableData() {
@@ -250,7 +251,6 @@ export default {
       ]
     },
   },
-  components: { DoughnutChart },
 }
 </script>
 

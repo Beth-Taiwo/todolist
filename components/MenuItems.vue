@@ -22,7 +22,7 @@
       <label :for="modalId" class="hover:bg-gray-300">Edit</label>
       <button class="hover:bg-gray-300">Delete</button>
     </ul>
-    <Modal :modalId="modalId" :title="title" :btnText="btnText" />
+    <Modal :modal-id="modalId" :title="title" :btn-text="btnText" />
   </div>
 </template>
 

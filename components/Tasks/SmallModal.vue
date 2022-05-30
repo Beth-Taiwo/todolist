@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="checkbox" :id="smallModalId" class="modal-toggle" />
+    <input :id="smallModalId" type="checkbox" class="modal-toggle" />
     <label :for="smallModalId" class="modal z-20 cursor-pointer bg-transparent">
       <label
         class="modal-box relative"
@@ -133,13 +133,13 @@
         </div>
       </label>
     </label>
-    <Modal :modalId="modalId" :title="title" :btnText="btnText" />
+    <Modal :modal-id="modalId" :title="title" :btn-text="btnText" />
   </div>
 </template>
 
 <script>
-import categoryColor from '~/components/Calendar/others/categoryColor.js'
 import Modal from '../Modal.vue'
+import categoryColor from '~/components/Calendar/others/categoryColor.js'
 
 export default {
   name: 'SmallModal',

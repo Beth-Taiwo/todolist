@@ -117,21 +117,21 @@
               ></path>
             </svg>
             <input
+              id=""
               type="search"
               name="search"
-              id=""
               class="input w-full rounded-[10px] bg-lightGrey pl-12"
               placeholder="Search anything"
             />
           </div>
           <div class="flex text-sm space-x-3">
             <div class="border p-2">
-              <select name="" id="" class="px-1">
+              <select id="" name="" class="px-1">
                 <option value="">Filter by</option>
               </select>
             </div>
             <div class="border p-2">
-              <select name="" id="" class="px-1">
+              <select id="" name="" class="px-1">
                 <option value="">Sort by</option>
               </select>
             </div>
@@ -141,7 +141,7 @@
         <Component :is="currentComponent" />
       </div>
     </div>
-    <Modal :modalId="modalId" :title="title" :btnText="btnText" />
+    <Modal :modal-id="modalId" :title="title" :btn-text="btnText" />
   </div>
 </template>
 
@@ -153,13 +153,13 @@ import AllTasks from '~/components/Tasks/AllTasks.vue'
 
 export default {
   name: 'TasksPage',
-  layout: 'main',
   components: {
     PastTasks,
     UpcomingTasks,
     PresentTasks,
     AllTasks,
   },
+  layout: 'main',
   data() {
     return {
       currentComponent: 'AllTasks',

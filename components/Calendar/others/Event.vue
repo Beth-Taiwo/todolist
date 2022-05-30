@@ -17,29 +17,22 @@
       }}</span>
     </label>
     <SmallModal
-      :smallModalId="event.summary"
-      :eventDetails="event"
-      modalMaxWidth="22rem"
+      :small-modal-id="event.summary"
+      :event-details="event"
+      modal-max-width="22rem"
     />
   </div>
 </template>
 
 <script>
-import Day from '~/components/Calendar/Days.vue'
 import SmallModal from '~/components/Tasks/SmallModal.vue'
 
 export default {
   name: 'CalenderEvent',
-  layout: 'main',
   components: {
-    Day,
     SmallModal,
   },
-  data() {
-    return {
-      eventData: null,
-    }
-  },
+  layout: 'main',
   props: {
     event: {
       type: Object,
@@ -53,6 +46,11 @@ export default {
         color: '#000',
       }),
     },
+  },
+  data() {
+    return {
+      eventData: null,
+    }
   },
 }
 </script>
