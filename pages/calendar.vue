@@ -129,7 +129,10 @@
               {{ categ.name }}
             </p>
           </div>
-          <div class="text-lightBlue text-lg mt-4 flex items-center">
+          <label
+            for="categId"
+            class="cursor-pointer text-lightBlue text-lg mt-5 flex items-center"
+          >
             Add category<svg
               class="ml-3"
               xmlns="http://www.w3.org/2000/svg"
@@ -148,11 +151,17 @@
                 d="M12 20v-8m0 0V4m0 8h8m-8 0H4"
               />
             </svg>
-          </div>
+          </label>
         </div>
       </div>
     </div>
     <Modal :modalId="modalId" btnText="Add task" title="Add task" />
+    <CategoryModal
+      categoryModalId="categId"
+      btnText="Add category"
+      title="Add category"
+      @add-to-category="addCategory"
+    />
   </div>
 </template>
 
@@ -161,6 +170,7 @@ import Day from '~/components/Calendar/Days.vue'
 import Event from '../components/Calendar/others/Event.vue'
 import calenderData from '../components/Calendar/others/monthEvents.js'
 import Modal from '../components/Modal.vue'
+import CategoryModal from '~/components/CategoryModal.vue'
 
 export default {
   name: 'CalendarPage',
@@ -169,6 +179,7 @@ export default {
     Day,
     Event,
     Modal,
+    CategoryModal,
   },
   data() {
     return {
@@ -177,21 +188,35 @@ export default {
       daysOfTheWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       calendarView: ['Day view', 'Week view', 'Month view', 'Year view'],
       selectedView: 'Month view',
-    }
-  },
-  computed: {
-    calenderData() {
-      return calenderData
-    },
-    category() {
-      return [
+      category: [
         { name: 'Family', color: 'bg-[#E58D8D33]' },
         { name: 'Money', color: 'bg-[#67CBAC33]' },
         { name: 'Work', color: 'bg-[#A867CB33]' },
         { name: 'Education', color: 'bg-[#8A904833]' },
         { name: 'Travel', color: 'bg-[#7367CB33]' },
         { name: 'House-keeping', color: 'bg-[#CB916733]' },
-      ]
+      ],
+    }
+  },
+
+  computed: {
+    calenderData() {
+      return calenderData
+    },
+    // category() {
+    //   return [
+    //     { name: 'Family', color: 'bg-[#E58D8D33]' },
+    //     { name: 'Money', color: 'bg-[#67CBAC33]' },
+    //     { name: 'Work', color: 'bg-[#A867CB33]' },
+    //     { name: 'Education', color: 'bg-[#8A904833]' },
+    //     { name: 'Travel', color: 'bg-[#7367CB33]' },
+    //     { name: 'House-keeping', color: 'bg-[#CB916733]' },
+    //   ]
+    // },
+  },
+  methods: {
+    addCategory(category) {
+      this.category.push(category)
     },
   },
 }
