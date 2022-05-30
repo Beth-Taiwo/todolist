@@ -1,8 +1,8 @@
 <template>
   <div class="text-systemBlack">
     <input type="checkbox" :id="modalId" class="modal-toggle" />
-    <div class="modal">
-      <div class="modal-box p-0" style="max-width: 940px">
+    <label :for="modalId" class="modal cursor-pointer">
+      <label for="" class="modal-box relative p-0" style="max-width: 940px">
         <h3 class="font-bold text-2xl pb-4 pt-5 px-7 text-left">{{ title }}</h3>
         <div class="divider my-0"></div>
         <div class="px-7 pb-7 pt-5">
@@ -191,8 +191,8 @@
             >
           </div>
         </div>
-      </div>
-    </div>
+      </label>
+    </label>
   </div>
 </template>
 
