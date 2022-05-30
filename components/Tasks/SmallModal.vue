@@ -112,21 +112,23 @@
           <label
             :for="modalId"
             class="btn bg-lightBlue w-full py-1 px-5 h-auto text-lg font-light normal-case tracking-wide"
-            ><svg
+          >
+            <svg
               class="mr-3"
               xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="img"
-              width="13px"
-              height="13px"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 512 512"
+              width="17.138"
+              height="17.138"
+              viewBox="0 0 17.138 17.138"
             >
               <path
-                fill="currentColor"
-                d="M345.994 42.019L179.531 208.481a646.3 646.3 0 0 0-154.206 248.04a24.845 24.845 0 0 0 6 25.708l.087.087a24.84 24.84 0 0 0 17.611 7.342a25.172 25.172 0 0 0 8.1-1.344a646.283 646.283 0 0 0 248.04-154.207L471.62 167.646A88.831 88.831 0 0 0 345.994 42.019ZM282.531 311.48A614.445 614.445 0 0 1 60.419 453.221a614.435 614.435 0 0 1 141.739-222.113l99.162-99.161l80.372 80.372Zm166.462-166.461l-44.674 44.673l-80.372-80.372l44.674-44.674a56.832 56.832 0 1 1 80.372 80.373Z"
-              /></svg
-            >Edit task</label
+                id="Icon_metro-pencil"
+                data-name="Icon metro-pencil"
+                d="M15.888,1.071a2.678,2.678,0,0,1,2.142,4.285L16.96,6.427,13.211,2.678l1.071-1.071a2.666,2.666,0,0,1,1.607-.536ZM2.5,13.389l-1.071,4.82,4.82-1.071L16.156,7.23,12.407,3.481,2.5,13.389ZM13.4,7.156l-7.5,7.5-.923-.923,7.5-7.5Z"
+                transform="translate(-1.428 -1.071)"
+                fill="#fff"
+              />
+            </svg>
+            Edit task</label
           >
         </div>
       </label>
